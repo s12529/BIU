@@ -1,10 +1,11 @@
+
+
 function PeopleTableViewModel(config) {
 	var self = this;
 	self.people = new ListOfPeople();
 	self.currentPage = 0;
 	self.pageSize = config.pageSize;
 	self.context = config.context;
-
 	var getData = function(begin, end) {
 		if(end>data.length) {
 			end = data.length;
@@ -50,6 +51,7 @@ function PeopleTableViewModel(config) {
 	}
 
 	self.sort = function(comparer) {
+		comparator.setState();
 		data.sort(comparer);
 		self.currentPage=0;
 		self.next();

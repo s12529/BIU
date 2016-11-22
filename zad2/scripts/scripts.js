@@ -3,7 +3,7 @@ var viewModel = new PeopleTableViewModel({
 });
 
 var comparator = new Comparators();
-
+comparator.setState();
 
 function init(){
     /*var listOfPeople = new ListOfPeople();

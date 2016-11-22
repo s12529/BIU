@@ -1,7 +1,11 @@
 function Comparators() {
 	var self = this;
+	self.state = false;
+
 	self.byName = function(person1,person2) {
-		return person1.firstName.localeCompare(person2.firstName);
+		if(self.state) {
+		return -person1.firstName.localeCompare(person2.firstName); }
+		else return person1.firstName.localeCompare(person2.firstName);
 	}
 
 	self.bySurname = function(person1,person2) {
@@ -30,5 +34,10 @@ function Comparators() {
 
 	self.byIncome = function(person1,person2) {
 		return person1.income - person2.income;
+	}
+
+	self.setState = function() {
+		if(self.state) {self.state = false;} else
+		if(!self.state) {self.state = true;}
 	}
 }
