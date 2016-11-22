@@ -9,21 +9,22 @@ function ListOfPeople(){
         var table = '<table border=1>';
         table += generateTableHeader();
         for(var i =0;i<people.length;i++){
-            table+=people[i].toTableRow();
+            table+=people[i].toTableRow(i+1);
         }
         table+='</table>'
         return table;
     }
     
     var generateTableHeader= function(){
-        return '<tr><th><button onclick="viewModel.sort(comparator.byId)">Id</button></th>'
+        return '<tr><th>Lp</th>'
+        + '<th><button onclick="viewModel.sort(comparator.byId)">Id</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.byName)">Name</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.bySurname)">Surname</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.byGender)">Gender</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.byEmail)">Email</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.byAge)">Age</button></th>'
         + '<th><button onclick="viewModel.sort(comparator.byBirthsday)">Birthsday</button></th>'
-        + '<th><button onclick="viewModel.sort(comparator.byIncome)">Income</button></th></tr>'
+        + '<th><button onclick="viewModel.sort(comparator.byIncome)">Income</button></th></tr>';
     }
     
     self.clear = function(){

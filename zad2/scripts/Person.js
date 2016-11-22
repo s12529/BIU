@@ -10,8 +10,10 @@ function Person(json){
     self.income = json.income;
     
     
-    self.toTableRow = function(){
-        return '<tr><td>'
+    self.toTableRow = function(lp){
+        return '<tr><td>' 
+            + lp
+            +'</td><td>'
             +self.id
             +'</td><td>'
             +self.name
@@ -31,11 +33,11 @@ function Person(json){
     }
     
     self.fullName = function(){
-        return sum(self.id, self.name, self.surname, self.gender, self.email, self.age. self.birthsday, self.income);
+        return sum(self.name, self.surname);
     }
     
-    var sum = function(a,b,c,d,e,f,g,h){
-        return a+ " "+b + " "+  c + " "+ d + " "+ e + " "+ f + " "+ g + " "+ h
+    var sum = function(a,b){
+        return a+ " "+b;
     }
     
 }
