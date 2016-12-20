@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Game } from './game';
+import { GameService } from './game.service';
 @Component({
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <h2>My Games</h2>
+    <ul class="games">
+      <li *ngFor="let game of games"
+        [class.selected]="game === selectedGame"
+        (click)="onSelect(game)">
+        <span class="badge">{{game.id}}</span> {{game.name}}
       </li>
     </ul>
-    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
+    <my-game-detail [game]="selectedGame"></my-game-detail>
   `,
   styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
     }
-    .heroes {
+    .games {
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
       width: 15em;
     }
-    .heroes li {
+    .games li {
       cursor: pointer;
       position: relative;
       left: 0;
@@ -36,20 +36,20 @@ import { HeroService } from './hero.service';
       height: 1.6em;
       border-radius: 4px;
     }
-    .heroes li.selected:hover {
+    .games li.selected:hover {
       background-color: #BBD8DC !important;
       color: white;
     }
-    .heroes li:hover {
+    .games li:hover {
       color: #607D8B;
       background-color: #DDD;
       left: .1em;
     }
-    .heroes .text {
+    .games .text {
       position: relative;
       top: -3px;
     }
-    .heroes .badge {
+    .games .badge {
       display: inline-block;
       font-size: small;
       color: white;
@@ -64,20 +64,20 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-  providers: [HeroService]
+  providers: [GameService]
 })
 export class AppComponent implements OnInit {
-  title = 'Tour of Heroes';
-  heroes: Hero[];
-  selectedHero: Hero;
-  constructor(private heroService: HeroService) { }
-  getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  title = 'Tour of Games';
+  games: Game[];
+  selectedGame: Game;
+  constructor(private gameService: GameService) { }
+  getGames(): void {
+    this.gameService.getGames().then(games => this.games = games);
   }
   ngOnInit(): void {
-    this.getHeroes();
+    this.getGames();
   }
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  onSelect(game: Game): void {
+    this.selectedGame = game;
   }
 }
