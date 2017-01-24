@@ -3,13 +3,13 @@
   color: black;
 }
 
-.rybki {
+.gry {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.rybki li {
+.gry li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -19,20 +19,20 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.rybki li.selected:hover {
+.gry li.selected:hover {
   background-color: #BBD8DC;
   color: white;
 }
-.rybki li:hover {
+.gry li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-.rybki .text {
+.gry .text {
   position: relative;
   top: -3px;
 }
-.rybki .badge {
+.gry .badge {
   display: inline-block;
   font-size: small;
   color: white;
@@ -47,7 +47,7 @@
   border-radius: 4px 0 0 4px;
 }
 
-.rybki .vote{
+.gry .vote{
   left: 235px;
   position: relative;
   top: -32px;
@@ -60,15 +60,15 @@
   margin-right: 10px;
 }
 
-.rybki .voted{
+.gry .voted{
   background: darkslategrey;
 }
-.rybki li.voted:hover{
+.gry li.voted:hover{
   background: darkslategrey;
   color: white;
 }
 
-.rybki li.voted.selected{
+.gry li.voted.selected{
   background: darkslategray;
 }
 
