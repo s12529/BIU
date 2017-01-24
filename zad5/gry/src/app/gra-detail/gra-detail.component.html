@@ -1,0 +1,8 @@
+<div *ngIf="gra">
+  <h2>{{gra.name}} details!</h2>
+  <div><label>id: </label>{{gra.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="gra.name" placeholder="name"/>
+  </div>
+</div>

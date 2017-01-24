@@ -1,0 +1,14 @@
+<div>
+  <h1>Gra</h1>
+  <form [formGroup]="form" (ngSubmit)="onAddGra()">
+        <label>Tytuł gry: </label>
+        <input formControlName="name" placeholder="Name" id="name" ><br>
+        <div *ngIf="!form.controls['name'].valid">
+        <div class="error">
+              <strong>Submit is not meeting the requirements!</strong>
+        </div>
+  </div>
+        <button type="submit">Submit</button>
+
+  </form>
+  </div>

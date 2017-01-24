@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<h2>Moje Gry</h2>
+<ul class="gry">
+  <li *ngFor="let gra of gry"
+      [class.selected]="gra === selectedGra"
+      [class.voted]="gra.likes"
+      (click)="onSelect(gra)">
+    <span class="badge">{{gra.id}}</span> {{gra.name}} <span class="votes">{{gra.vote}}</span>
+        <div *ngIf="selectedGra" class="vote">
+          <button (click)="onVote(selectedGra); onSort()"> Vote</button>
+          <button (click)="unlike(selectedGra); onSort()"> Unvote</button>
+        </div>
+  </li>
+</ul>
+
+<div *ngIf="selectedGra">
+  <h2>{{selectedGra.name}} details!</h2>
+  <div><label>id: </label>{{selectedGra.id}}</div>
+</div>
+
+<button (click)="onShowForm()">Add Gra</button>
+<app-dashboard *ngIf="isForm<0" (addToList)="onAddGra($event)"></app-dashboard>
+
+
